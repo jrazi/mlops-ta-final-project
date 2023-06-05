@@ -1,0 +1,168 @@
+\documentclass[a4paper]{article} 
+
+\usepackage{titlesec}
+
+
+
+\titleformat{\section}[hang]{\bfseries\Large\filright}{\thesection.}{1em}{}
+\titleformat{\subsection}{\bfseries\large}{\thesubsection.}{1.1em}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection.}{1em}{}
+
+% Set numbering for subsections and subsubsections
+\setcounter{secnumdepth}{2}
+
+\input{head}
+\begin{document}
+	
+	%-------------------------------
+	%	TITLE SECTION
+	%-------------------------------
+	
+	\fancyhead[C]{}
+	\hrule \medskip % Upper rule
+	\begin{minipage}{0.295\textwidth} 
+		\raggedright
+		\footnotesize
+		  Sharif University of Technology \hfill\\   
+		Computer Engineering Department\hfill\\
+		Ali Zarezadeh
+		% \begin{figure}
+    	% 	\includegraphics{SharifEngLogo.png}
+    	% \end{figure}
+	\end{minipage}
+	\begin{minipage}{0.4\textwidth} 
+		\centering 
+		\large 
+		Final Phase of the Project\\ 
+		\normalsize 
+		MLSD, Spring 2023\\ 
+	\end{minipage}
+	\begin{minipage}{0.295\textwidth} 
+		\raggedleft
+		\small
+            Due Date: 1402/04/05
+            \hfill\\
+	\end{minipage}
+	\medskip\hrule 
+	\bigskip
+	
+	%-------------------------------
+	%	CONTENTS
+	%-------------------------------
+	\begin{center}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}{c @{\hspace{4cm}} c}
+			Javad Razi & Homayoon Sadeghi \\
+			\textit{j.razi@outlook.com} & \textit{homayoon.9171@gmail.com} \\
+		\end{tabular}
+	\end{center}
+
+	%-----------------------Overview------------------------
+	
+	\section{Overview}
+	In this project, you will apply the concepts and techniques you have learned in the course to deploy a machine learning model into a production environment. You will use common MLOps best practices and automation tools and pipelines, including Flask or FastAPI for model deployment, Docker for containerization, and MLflow for experiment tracking and model management.	
+	
+	While we specify requirements in the project, you have the freedom to choose alternative methods or tools as long as your choice makes sense and you can justify it. This project is designed to give you hands-on experience in deploying a machine learning model into a production environment. We encourage you to be creative and make informed decisions based on sound reasoning.
+
+	%-----------------------Requirements-------------------------
+			
+	\section{Requirements}
+	
+	\subsection{Model Deployment}
+	You will be required to deploy your machine learning model as a web service using tools such as Flask or FastAPI. You should also use one of the common model deployment patterns and strategies covered in the course. You should justify your choice of deployment pattern and strategy based on the requirements and constraints of your specific project. In addition, you should consider factors such as scalability, maintainability, and cost when making your decision.	
+	
+	\subsubsection{\textbf{Bonus}}
+	\begin{itemize}
+	\item Implement end-to-end tests for your deployed machine learning application to ensure its functionality and performance.
+	\item Implement version synchronization and model version metadata management for your deployed machine learning application to keep track of different versions of your model and data.
+	\end{itemize}
+
+
+	\subsection{Automation}
+	You will be required to implement some form of automation for your machine learning model deployment process. This could include steps such as containerization, continuous integration and continuous deployment (CI/CD), and automation of the ML workflow. Some popular tools for automating the deployment process include Docker, GitHub Actions, and MLflow.
+	
+	\begin{enumerate}
+	\item \textbf{Containerization:} You will be required to containerize your machine learning application using Docker. This will make it easier to deploy and run your application in different environments.
+	
+	\item \textbf{MLFlow:} You will be required to use MLflow to track experiments and manage models for your project. This includes keeping track of different versions of your model, data, and code, making it easier to reproduce and share your work with others.
+	
+	\end{enumerate}
+
+	\subsubsection{\textbf{Bonus}}
+	\begin{itemize}
+	\item Use more features of MLflow for your project. This could include setting up a model registry or serving infrastructure, using a tracking server to centrally store and manage experiment data and model artifacts, or packaging code into reproducible runs and sharing models with others.
+	\item  Setup a continuous integration and continuous deployment (CI/CD) pipeline for your machine learning application using tools such as GitHub Actions. This will help you automate the process of building, testing, and deploying your application.
+	\end{itemize}
+
+	\subsection{Monitoring}
+	You will be required to set up monitoring for your deployed machine learning application. This should include monitoring of model performance using techniques such as A/B testing or shadow testing, logging of relevant events and metrics, and implementation of a feedback loop to collect natural labels from the production environment and use them to update your model. 
+
+	\subsubsection{\textbf{Bonus}}
+	\begin{itemize}
+	\item Set up alerts to notify you of any issues with your deployed application. Some popular tools for setting up monitoring and alerts for your deployed application include Prometheus, Grafana, and DataDog.
+	\item Identify common problems that can arise in ML projects in production, such as data distribution shift or performance degradation. Implement techniques for dealing with these problems and explain what tools you used and how you dealt with the problems in your project report.
+	\end{itemize}
+
+	
+	%-----------------------Deliverables-------------------------
+	
+	\section{Deliverables}
+	\textbf{Note:} Please remember that \textbf{\underline{it is a requirement}} for this project that you implement your code in GitHub so that we can have access to your pipelines, actions, CI/CD procedures, codes, and commits.
+	
+	\subsection{Deployed Machine Learning Application}
+	You will be required to submit a link to your deployed machine learning application.
+
+	\subsection{GitHub Access}
+	You will be required to add the Github account of the course (@SharifMLSD) as collaborator to your GitHub project so that we can have access to your pipelines, actions, CI/CD procedures, codes, and commits.
+
+	\subsection{Latest Commit Hash}
+	You will be required to submit the hash of your latest git commit in the course website.
+
+	\subsection{Optional Demo Video}
+	As an optional deliverable, you may choose to upload a short video (max 10 minutes) demonstrating your deployed machine learning application. This video can serve as a backup in case there are any issues during the live presentation of your application. By providing a recorded demonstration of your project, you can ensure that we have an alternative way to assess part of your work if things don’t go as planned during the live presentation.
+
+	\subsection{Project Report}
+	You will be required to submit a project report that includes the following sections:
+
+	\begin{enumerate}
+	\item \textbf{Deployment:} A description of how you deployed your machine learning model, including your chosen deployment pattern and strategy, and justification for these choices. This section should also include a discussion of any trade-offs or challenges you faced when making your deployment decisions.
+	\item \textbf{Automation:} A description of the automatic deployment pipeline you set up for your machine learning model, including details on containerization, CI/CD, and automation of the ML workflow. This section should also include a discussion of any tools or technologies you used to automate the deployment process.
+	\item \textbf{Monitoring:} A description of how you set up monitoring for your deployed machine learning application, including details on monitored metrics and feedback loops.
+	\item \textbf{Challenges and Trade-offs:} A discussion of any challenges or trade-offs you faced during the deployment phase of the project, including any dead-ends encountered and how you overcame them.
+	\end{enumerate}
+
+
+	%-----------------------Tips-------------------------
+
+	\section{Final Submission}
+For your final submission, you will be required to upload the following items on the course website:
+	\begin{itemize}
+	\item A report file containing your project report.
+	\item A text file containing the hash of your latest git commit.
+	\item An optional demo video (max 10 minutes) of your project.
+	\end{itemize}
+
+
+	%-----------------------Tips-------------------------
+
+	\section{Tips}
+	
+	\begin{itemize}
+	\item Start with a simple deployment pipeline and gradually add complexity as needed. This will help you avoid over-engineering your solution and make it easier to debug issues when they arise.
+	\item Deployment can be a complex process with many moving parts. To make it more manageable, try breaking it down into smaller, more manageable steps. This will help you stay organized and focused, and make it easier to track your progress.
+	\item There are many sample MLOps projects available on GitHub that can provide valuable insights and inspiration for your own project. Some repositories that contain sample MLOps projects for the deployment section include \href{https://github.com/dpleus/mlops}{MLOps Platform Skeleton}, \href{https://github.com/alfozan/mlflow-example}{mlflow-example} and \href{https://github.com/kelvins/awesome-mlops} {awesome-mlops}.
+	\end{itemize}
+
+	%-----------------------Extra Reading Material-------------------------
+	\section{Extra Reading Material}
+	Here are some additional resources that may help you complete this project:
+
+	\begin{itemize}
+	\item \href{https://martinfowler.com/articles/cd4ml.html}{Continuous Delivery for Machine Learning}
+	\item \href{https://cloud.google.com/solutions/machine-learning/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning}{MLOps: Continuous delivery and automation pipelines in machine learning}
+	\item \href{https://christophergs.com/machine learning/2020/03/14/how-to-monitor-machine-learning-models/}{Monitoring Machine Learning Models in Production}
+	\item \href{https://mlinproduction.com/ab-test-ml-models-deployment-series-08/}{A/B Testing for Machine Learning Models}
+	\end{itemize}
+
+	
+\end{document}
